@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <ImageView fitHeight="68.0" fitWidth="67.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -20,10 +20,13 @@
       <VBox layoutX="9.0" layoutY="99.0" prefHeight="145.0" prefWidth="200.0" spacing="10.0">
          <children>
             <Label fx:id="lbShwarmType" alignment="CENTER" text="Тип шаурмы" textAlignment="CENTER" />
-            <RadioButton fx:id="rbClassicShwarm" mnemonicParsing="false" text="Классическая - 150 руб." />
-            <RadioButton fx:id="rbHomeShwarm" mnemonicParsing="false" text="Домашняя - 165 руб." />
-            <RadioButton fx:id="rbVegeShwarm" mnemonicParsing="false" text="Вегетарианская - 130 руб." />
-            <RadioButton fx:id="rbExtraShwarm" mnemonicParsing="false" text="Шаурма &quot;Экстра&quot; - 200 руб." />
+            <RadioButton fx:id="rbClassicShwarm" mnemonicParsing="false" text="Классическая">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgType" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rbHomeShwarm" mnemonicParsing="false" text="Домашняя" toggleGroup="$tgType" />
+            <RadioButton fx:id="rbVegeShwarm" mnemonicParsing="false" text="Вегетарианская" toggleGroup="$tgType" />
+            <RadioButton fx:id="rbExtraShwarm" mnemonicParsing="false" text="Шаурма &quot;Экстра&quot;" toggleGroup="$tgType" />
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -60,7 +63,7 @@
          <children>
             <Label fx:id="lbAdds" text="Добавки" />
             <RadioButton fx:id="rbSausages" mnemonicParsing="false" text="Охотничьи колбаски - 50 руб." />
-            <RadioButton fx:id="rbPineapple" mnemonicParsing="false" text="Ананас - 35 руб." />
+            <RadioButton fx:id="rbPwineapple" mnemonicParsing="false" text="Ананас - 35 руб." />
             <RadioButton fx:id="rbCheese" mnemonicParsing="false" text="Сыр - 15 руб." />
             <RadioButton fx:id="rbMeetSauce" mnemonicParsing="false" text="Мясной соус - 25 руб." />
             <RadioButton fx:id="rbFrenchFries" mnemonicParsing="false" text="Картофель фри - 20 руб." />
@@ -71,9 +74,8 @@
       </VBox>
       <HBox layoutX="601.0" layoutY="299.0" prefHeight="92.0" prefWidth="254.0" spacing="10.0">
          <children>
-            <Button fx:id="btnOrder" mnemonicParsing="false" onAction="#handleOrderButtonAction" prefHeight="67.0"
-                    prefWidth="111.0" text="Заказать"/>
-            <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#handleCancelButtonAction" prefHeight="66.0" prefWidth="115.0" text="Отмена" />
+            <Button fx:id="btnOrder" mnemonicParsing="false" onAction="#orderButtonAction" prefHeight="67.0" prefWidth="111.0" text="Заказать" />
+            <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="66.0" prefWidth="115.0" text="Отмена" />
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
