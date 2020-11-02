@@ -65,7 +65,6 @@ public class Controller implements Initializable {
 
     @FXML
     public void orderButtonAction() {
-        double price;
         int quantity1 = Integer.parseInt(tfQuantity1.getText());
         int quantity2 = Integer.parseInt(tfQuantity2.getText());
 
@@ -74,7 +73,7 @@ public class Controller implements Initializable {
         if (rbClassicShwarm.isSelected()) {
             shwarm = new Shawarma("Классическая шаурма", 150*quantity1);
         } else if (rbHomeShwarm.isSelected()) {
-            shwarm = new Shawarma("Домашняя шаурма", 1659*quantity1);
+            shwarm = new Shawarma("Домашняя шаурма", 165*quantity1);
         } else if (rbVegeShwarm.isSelected()) {
             shwarm = new Shawarma("Вегетарианская шаурма", 130*quantity1);
         } else if (rbExtraShwarm.isSelected()) {
@@ -114,6 +113,8 @@ public class Controller implements Initializable {
         }
 
         taSummary.appendText(shwarm.getLabel() + '\n' + shwarm.getPrice() + " руб." + '\n');
+        DataBaseConnect insertData = new DataBaseConnect();
+        insertData.insert(shwarm.getLabel(), shwarm.getPrice());
     }
 
     @FXML
