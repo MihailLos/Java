@@ -71,13 +71,13 @@ public class Controller implements Initializable {
         Order shwarm = null;
 
         if (rbClassicShwarm.isSelected()) {
-            shwarm = new Shawarma("Классическая шаурма", 150*quantity1);
+            shwarm = new Shawarma("Классическая шаурма", 150);
         } else if (rbHomeShwarm.isSelected()) {
-            shwarm = new Shawarma("Домашняя шаурма", 165*quantity1);
+            shwarm = new Shawarma("Домашняя шаурма", 165);
         } else if (rbVegeShwarm.isSelected()) {
-            shwarm = new Shawarma("Вегетарианская шаурма", 130*quantity1);
+            shwarm = new Shawarma("Вегетарианская шаурма", 130);
         } else if (rbExtraShwarm.isSelected()) {
-            shwarm = new Shawarma("Шаурма 'Экстра'", 200*quantity1);
+            shwarm = new Shawarma("Шаурма 'Экстра'", 200);
         }
 
         if (rbCommon.isSelected()) {
@@ -92,13 +92,13 @@ public class Controller implements Initializable {
 
         if (rbSausages.isSelected()) {
             shwarm = new CostExtra("Охотничьи колбаски", 50*quantity1, shwarm);
-        } else if (rbPineapple.isSelected()) {
+        } if (rbPineapple.isSelected()) {
             shwarm = new CostExtra("Ананас", 35*quantity1, shwarm);
-        } else if (rbCheese.isSelected()) {
+        } if (rbCheese.isSelected()) {
             shwarm = new CostExtra("Сыр", 15*quantity1, shwarm);
-        } else if (rbMeatSauce.isSelected()) {
+        } if (rbMeatSauce.isSelected()) {
             shwarm = new CostExtra("Мясная подливка", 25*quantity1, shwarm);
-        } else if (rbFrenchFries.isSelected()) {
+        } if (rbFrenchFries.isSelected()) {
             shwarm = new CostExtra("Картофель фри", 20*quantity1, shwarm);
         }
 
@@ -138,5 +138,6 @@ public class Controller implements Initializable {
         rbMultifruitJuice.setSelected(false);
         tfQuantity1.setText(null);
         tfQuantity2.setText(null);
+        taSummary.clear();
     }
 }
