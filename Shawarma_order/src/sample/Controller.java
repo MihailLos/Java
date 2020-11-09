@@ -1,13 +1,19 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -47,9 +53,17 @@ public class Controller implements Initializable {
     @FXML
     protected RadioButton rbChili;
     @FXML
-    protected TextField tfQuantity1;
+    protected TextField tfSausagesQuantity;
     @FXML
-    protected TextField tfQuantity2;
+    protected TextField tfPineappleQuantity;
+    @FXML
+    protected TextField tfCheeseQuantity;
+    @FXML
+    protected TextField tfMeatSauceQuantity;
+    @FXML
+    protected TextField tfFrenchFriesQuantity;
+    @FXML
+    protected TextField tfDrinkQuantity;
     @FXML
     protected TextArea taSummary;
 
@@ -65,9 +79,6 @@ public class Controller implements Initializable {
 
     @FXML
     public void orderButtonAction() {
-        int quantity1 = Integer.parseInt(tfQuantity1.getText());
-        int quantity2 = Integer.parseInt(tfQuantity2.getText());
-
         Order shwarm = null;
 
         if (rbClassicShwarm.isSelected()) {
@@ -91,25 +102,34 @@ public class Controller implements Initializable {
         }
 
         if (rbSausages.isSelected()) {
-            shwarm = new CostExtra("Охотничьи колбаски", 50*quantity1, shwarm);
+            int sausagesQuantity = Integer.parseInt(tfSausagesQuantity.getText());
+            shwarm = new CostExtra("Охотничьи колбаски x" + tfSausagesQuantity.getText(), 50*sausagesQuantity, shwarm);
         } if (rbPineapple.isSelected()) {
-            shwarm = new CostExtra("Ананас", 35*quantity1, shwarm);
+            int pineappleQuantity = Integer.parseInt(tfPineappleQuantity.getText());
+            shwarm = new CostExtra("Ананас x" + tfPineappleQuantity.getText(), 35*pineappleQuantity, shwarm);
         } if (rbCheese.isSelected()) {
-            shwarm = new CostExtra("Сыр", 15*quantity1, shwarm);
+            int cheeseQuantity = Integer.parseInt(tfCheeseQuantity.getText());
+            shwarm = new CostExtra("Сыр x" + tfCheeseQuantity.getText(), 15*cheeseQuantity, shwarm);
         } if (rbMeatSauce.isSelected()) {
-            shwarm = new CostExtra("Мясная подливка", 25*quantity1, shwarm);
+            int meatSauceQuantity = Integer.parseInt(tfMeatSauceQuantity.getText());
+            shwarm = new CostExtra("Мясная подливка x" + tfMeatSauceQuantity.getText(), 25*meatSauceQuantity, shwarm);
         } if (rbFrenchFries.isSelected()) {
-            shwarm = new CostExtra("Картофель фри", 20*quantity1, shwarm);
+            int frenchFriesQuantity = Integer.parseInt(tfFrenchFriesQuantity.getText());
+            shwarm = new CostExtra("Картофель фри x" + tfFrenchFriesQuantity.getText(), 20*frenchFriesQuantity, shwarm);
         }
 
         if (rbCola.isSelected()) {
-            shwarm = new Drinks("Кола", 70*quantity2, shwarm);
+            int drinkQuantity = Integer.parseInt(tfDrinkQuantity.getText());
+            shwarm = new Drinks("Кола x" + tfDrinkQuantity.getText(), 70*drinkQuantity, shwarm);
         } else if (rbWater.isSelected()) {
-            shwarm = new Drinks("Вода", 20*quantity2, shwarm);
+            int drinkQuantity = Integer.parseInt(tfDrinkQuantity.getText());
+            shwarm = new Drinks("Вода x" + tfDrinkQuantity.getText(), 20*drinkQuantity, shwarm);
         } else if (rbAppleJuice.isSelected()) {
-            shwarm = new Drinks("Сок яблочный", 40*quantity2, shwarm);
+            int drinkQuantity = Integer.parseInt(tfDrinkQuantity.getText());
+            shwarm = new Drinks("Сок яблочный x" + tfDrinkQuantity.getText(), 40*drinkQuantity, shwarm);
         } else if (rbMultifruitJuice.isSelected()) {
-            shwarm = new Drinks("Сок мультифрукт", 50*quantity2, shwarm);
+            int drinkQuantity = Integer.parseInt(tfDrinkQuantity.getText());
+            shwarm = new Drinks("Сок мультифрукт x" + tfDrinkQuantity.getText(), 50*drinkQuantity, shwarm);
         }
 
         taSummary.appendText(shwarm.getLabel() + '\n' + shwarm.getPrice() + " руб." + '\n');
@@ -136,8 +156,12 @@ public class Controller implements Initializable {
         rbWater.setSelected(false);
         rbAppleJuice.setSelected(false);
         rbMultifruitJuice.setSelected(false);
-        tfQuantity1.setText(null);
-        tfQuantity2.setText(null);
+        tfSausagesQuantity.setText(null);
+        tfPineappleQuantity.setText(null);
+        tfCheeseQuantity.setText(null);
+        tfMeatSauceQuantity.setText(null);
+        tfFrenchFriesQuantity.setText(null);
+        tfDrinkQuantity.setText(null);
         taSummary.clear();
     }
 }

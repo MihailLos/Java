@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DataBaseConnect {
-    private Connection connect() {
+    public Connection connect() {
         // SQLite connection string
         String url = "jdbc:sqlite:C:/SQLiteStudio-3.2.1/SQLiteStudio/data_base";
         Connection con = null;

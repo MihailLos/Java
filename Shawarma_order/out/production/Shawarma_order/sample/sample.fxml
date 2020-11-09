@@ -32,12 +32,6 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </VBox>
-      <VBox layoutX="713.0" layoutY="109.0" prefHeight="145.0" prefWidth="100.0">
-         <children>
-            <Label fx:id="lbQuantity" text="Количество" />
-            <TextField fx:id="tfQuantity1" />
-         </children>
-      </VBox>
       <VBox layoutX="261.0" layoutY="99.0" prefHeight="145.0" prefWidth="132.0" spacing="10.0">
          <children>
             <Label fx:id="lbSauce" text="Соус" />
@@ -66,13 +60,13 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </VBox>
-      <VBox layoutX="9.0" layoutY="622.0" prefHeight="92.0" prefWidth="504.0">
+      <VBox layoutX="9.0" layoutY="622.0" prefHeight="92.0" prefWidth="562.0">
          <children>
             <TextArea fx:id="taSummary" prefHeight="472.0" prefWidth="504.0" />
          </children>
       </VBox>
-      <Button fx:id="btnOrder" layoutX="554.0" layoutY="630.0" mnemonicParsing="false" onAction="#orderButtonAction" prefHeight="67.0" prefWidth="111.0" text="Заказать" />
-      <Button fx:id="btnCancel" layoutX="698.0" layoutY="631.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="66.0" prefWidth="115.0" text="Отмена" />
+      <Button fx:id="btnOrder" layoutX="598.0" layoutY="637.0" mnemonicParsing="false" onAction="#orderButtonAction" prefHeight="67.0" prefWidth="111.0" text="Заказать" />
+      <Button fx:id="btnCancel" layoutX="735.0" layoutY="637.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="66.0" prefWidth="115.0" text="Отмена" />
       <VBox layoutX="9.0" layoutY="315.0" prefHeight="200.0" prefWidth="200.0" spacing="10.0">
          <children>
             <Label text="Напиток" />
@@ -88,11 +82,20 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </VBox>
-      <VBox layoutX="261.0" layoutY="315.0" prefHeight="145.0" prefWidth="100.0">
+      <VBox layoutX="216.0" layoutY="315.0" prefHeight="145.0" prefWidth="156.0" spacing="10.0">
          <children>
-            <Label text="Количество" />
-            <TextField fx:id="tfQuantity2" />
+            <Label text="Количество напитков" />
+            <TextField fx:id="tfDrinkQuantity" />
          </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
       </VBox>
+      <TextField fx:id="tfSausagesQuantity" layoutX="665.0" layoutY="131.0" AnchorPane.leftAnchor="665.0" />
+      <TextField fx:id="tfPineappleQuantity" layoutX="665.0" layoutY="159.0" />
+      <TextField fx:id="tfCheeseQuantity" layoutX="665.0" layoutY="187.0" />
+      <TextField fx:id="tfMeatSauceQuantity" layoutX="665.0" layoutY="212.0" />
+      <TextField fx:id="tfFrenchFriesQuantity" layoutX="665.0" layoutY="237.0" />
+      <Label fx:id="lbExtraQuantity" layoutX="665.0" layoutY="108.0" text="Количество добавок" />
    </children>
 </AnchorPane>
