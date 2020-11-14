@@ -19,7 +19,7 @@
       </Label>
       <VBox layoutX="9.0" layoutY="99.0" prefHeight="145.0" prefWidth="200.0" spacing="10.0">
          <children>
-            <Label fx:id="lbShwarmType" alignment="CENTER" text="Тип шаурмы" textAlignment="CENTER" />
+            <Label fx:id="lbShwarmType" alignment="CENTER" style="-fx-font-weight: bold;" text="Тип шаурмы" textAlignment="CENTER" />
             <RadioButton fx:id="rbClassicShwarm" mnemonicParsing="false" text="Классическая - 150 руб.">
                <toggleGroup>
                   <ToggleGroup fx:id="tgType1" />
@@ -34,7 +34,7 @@
       </VBox>
       <VBox layoutX="261.0" layoutY="99.0" prefHeight="145.0" prefWidth="132.0" spacing="10.0">
          <children>
-            <Label fx:id="lbSauce" text="Соус" />
+            <Label fx:id="lbSauce" style="-fx-font-weight: bold;" text="Соус" />
             <RadioButton fx:id="rbCommon" mnemonicParsing="false" text="Обычный">
                <toggleGroup>
                   <ToggleGroup fx:id="tgType2" />
@@ -49,12 +49,12 @@
       </VBox>
       <VBox layoutX="452.0" layoutY="99.0" prefHeight="200.0" prefWidth="213.0" spacing="10.0">
          <children>
-            <Label fx:id="lbAdds" text="Добавки" />
-            <RadioButton fx:id="rbSausages" mnemonicParsing="false" text="Охотничьи колбаски - 50 руб." />
-            <RadioButton fx:id="rbPineapple" mnemonicParsing="false" text="Ананас - 35 руб." />
-            <RadioButton fx:id="rbCheese" mnemonicParsing="false" text="Сыр - 15 руб." />
-            <RadioButton fx:id="rbMeatSauce" mnemonicParsing="false" text="Мясная подливка - 25 руб." />
-            <RadioButton fx:id="rbFrenchFries" mnemonicParsing="false" text="Картофель фри - 20 руб." />
+            <Label fx:id="lbAdds" style="-fx-font-weight: bold;" text="Добавки" />
+            <Label fx:id="lbSausages" text="Охотничьи колбаски - 50 руб." />
+            <Label fx:id="lbPineapple" text="Ананас - 35 руб." />
+            <Label fx:id="lbCheese" text="Сыр - 15 руб." />
+            <Label fx:id="lbMearSauce" text="Мясная подливка - 25 руб." />
+            <Label fx:id="lbFrenchFries" text="Картофель фри - 20 руб." />
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -69,23 +69,11 @@
       <Button fx:id="btnCancel" layoutX="735.0" layoutY="637.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="66.0" prefWidth="115.0" text="Отмена" />
       <VBox layoutX="9.0" layoutY="315.0" prefHeight="200.0" prefWidth="200.0" spacing="10.0">
          <children>
-            <Label text="Напиток" />
-            <RadioButton fx:id="rbCola" mnemonicParsing="false" text="Кола - 70 руб.">
-               <toggleGroup>
-                  <ToggleGroup fx:id="tgType4" />
-               </toggleGroup></RadioButton>
-            <RadioButton fx:id="rbWater" mnemonicParsing="false" text="Вода - 20 руб." toggleGroup="$tgType4" />
-            <RadioButton fx:id="rbAppleJuice" mnemonicParsing="false" text="Сок яблочный - 40 руб." toggleGroup="$tgType4" />
-            <RadioButton fx:id="rbMultifruitJuice" mnemonicParsing="false" text="Сок мультифрукт - 50 руб." toggleGroup="$tgType4" />
-         </children>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </VBox>
-      <VBox layoutX="216.0" layoutY="315.0" prefHeight="145.0" prefWidth="156.0" spacing="10.0">
-         <children>
-            <Label text="Количество напитков" />
-            <TextField fx:id="tfDrinkQuantity" />
+            <Label style="-fx-font-weight: bold;" text="Напиток" />
+            <Label text="Кола - 70 руб." />
+            <Label text="Вода - 20 руб." />
+            <Label text="Сок яблочный - 40 руб." />
+            <Label text="Сок мультифрукт - 50 руб." />
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -96,6 +84,11 @@
       <TextField fx:id="tfCheeseQuantity" layoutX="665.0" layoutY="187.0" />
       <TextField fx:id="tfMeatSauceQuantity" layoutX="665.0" layoutY="212.0" />
       <TextField fx:id="tfFrenchFriesQuantity" layoutX="665.0" layoutY="237.0" />
-      <Label fx:id="lbExtraQuantity" layoutX="665.0" layoutY="108.0" text="Количество добавок" />
+      <Label fx:id="lbExtraQuantity" layoutX="665.0" layoutY="108.0" style="-fx-font-weight: bold;" text="Количество добавок" />
+      <Label layoutX="233.0" layoutY="324.0" style="-fx-font-weight: bold;" text="Количество напитков" />
+      <TextField fx:id="tfColaQuantity" layoutX="233.0" layoutY="351.0" />
+      <TextField fx:id="tfWaterQuantity" layoutX="233.0" layoutY="376.0" />
+      <TextField fx:id="tfAppleJuiceQuantity" layoutX="233.0" layoutY="403.0" />
+      <TextField fx:id="tfMultifruitJuiceQuantity" layoutX="233.0" layoutY="428.0" />
    </children>
 </AnchorPane>
