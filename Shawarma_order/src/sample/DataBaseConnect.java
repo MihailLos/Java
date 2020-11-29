@@ -6,17 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DataBaseConnect {
-    public Connection connect() {
-        // SQLite connection string
-        String url = "jdbc:sqlite:C:/SQLiteStudio-3.2.1/SQLiteStudio/data_base";
-        Connection con = null;
-        try {
-            con = DriverManager.getConnection(url);
-            System.out.println("Successful connection");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return con;
+    public static Connection connect() throws SQLException {
+        return DriverManager.getConnection("jdbc:sqlite:C:/SQLiteStudio-3.2.1/SQLiteStudio/data_base");
     }
 
     public void insert(String order_label, double order_price) {

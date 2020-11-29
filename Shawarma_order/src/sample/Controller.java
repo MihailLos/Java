@@ -58,6 +58,8 @@ public class Controller implements Initializable {
     protected Button btnOrder;
     @FXML
     protected Button btnCancel;
+    @FXML
+    protected Button btnAllOrders;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -168,5 +170,17 @@ public class Controller implements Initializable {
         tfAppleJuiceQuantity.setText("");
         tfMultifruitJuiceQuantity.setText("");
         taSummary.clear();
+    }
+
+    @FXML
+    public void AllOrdersButtonAction(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ord_table.fxml"));
+        Scene scene = new Scene(root);
+        Stage newWindow = new Stage();
+
+        newWindow.setTitle("Shop 'Shawarma from Loos'");
+        newWindow.setScene(scene);
+        newWindow.initModality(Modality.WINDOW_MODAL);
+        newWindow.show();
     }
 }
