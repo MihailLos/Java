@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Главная страница</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        p {
+            text-indent: 20px; /* Отступ первой строки в пикселах */
+        }
+        .fig {
+            text-align: center; /* Выравнивание по центру */
+        }
+    </style>
+</head>
+<body>
+    <header th:insert="blocks/header.html :: header"></header>
+
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">Вам нужна помощь в установке Spring Boot?</h1>
+        <p class="lead" th:text="'Привет, ' + ${name} + '!'"/>
+        <p>Писать веб-сайты всегда хотелось любому программисту. Программистам на JavaScript в этом плане проще,
+            потому что синтаксис данного языка простой, и имеется много фреймворков для работы с сайтами.
+            Но как же быть Java-программистам?</p>
+        <p>Именно для них был создан такой замечательный фреймворк, как Spring Boot,
+            который позволяет развернуть сервер для сайта на локальной машине пользователя,
+            а также легко взаймодействовать с HTML страницами при помощи Java кода.
+        <p>Данный сайт поможет вам в установке Spring Boot, а также стилей при помощи сервиса BootStrap.
+            Для навигации по сайту используйте кнопки в правом верхнем углу.</p>
+        <p class="fig">
+            <img src="https://alexkosarev.name/wp-content/uploads/2019/01/spring_boot_logo.png" alt="Spring Boot Logo" width="256" height="256">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1024px-Bootstrap_logo.svg.png" alt="BootStrap Logo" width="256" height="256">
+        </p>
+    </main>
+
+    <footer th:insert="blocks/footer.html :: footer" class="fig"></footer>
+</body>
+</html>

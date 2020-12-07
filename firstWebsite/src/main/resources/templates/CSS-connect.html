@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Инструкция по установке стилей BootStrap</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        p {
+            font-size: 14pt;
+            text-indent: 20px;
+        }
+        .fig {
+            text-align: center; /* Выравнивание по центру */
+        }
+    </style>
+</head>
+<body>
+    <header th:insert="blocks/header.html :: header"></header>
+
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">Инструкция по установке стилей BootStrap</h1>
+        <p class="lead" th:text="'Поскольку первый созданный сайт выглядит, мягко говоря, некрасиво, подключим несколько стилей при помощи сервиса BootStrap'"/>
+        <p>1. Сперва перейдем на <a href="https://getbootstrap.com/docs/4.5/examples/">сайт</a> с представленными примерами стилей оформления элементов сайта:</p>
+        <p class="fig">
+            <img src="/images/tutor3.PNG" width="941" height="486"/>
+        </p>
+        <p>2. Выбираем нужный стиль. Например выберем <a href="https://getbootstrap.com/docs/4.5/examples/pricing/">такой</a>:</p>
+        <p class="fig">
+            <img src="/images/tutor4.PNG" width="941" height="486"/>
+        </p>
+        <p>3. Пусть скопируем стиль шапки и нижней части сайта. Поскольку данные стили будут применены ко всей части сайта, их желательно вынести в отдельные файлы. Создадим два файла header.html и footer.html:</p>
+        <p class="fig">
+            <img src="/images/tutor5.PNG"/>
+        </p>
+        <p>4. Переходим обратно сайт, нажимаем сочетание клавиш Ctrl+Shift+C. Откроется код сайта</p>
+        <p>5. Указателем мыши выбираем шапку сайта и копируем соответствующий ей div:</p>
+        <p class="fig">
+            <img src="/images/tutor6.PNG" width="941" height="486"/>
+        </p>
+        <p>6. Вставляем скопированный код в header.html и обрамляем его тегом div th:fragment="header"</p>
+        <p>7. Переходим в html файл, где нужно изменить стиль и после тега body вставляем следующую команду:</p>
+        <p class="fig">
+            <img src="/images/tutor7.PNG"/>
+        </p>
+        <p>8. Аналогично делаем для нижней части, просто выделяем ее в BootStrap, создаем файл footer.html и делаем аналогичные действия, только меняем header на footer</p>
+        <p>Таким образом мы установили стиль для шапки и нижней части сайта</p>
+        <p>*Для большей информации посмотрите следующее <a href="https://www.youtube.com/watch?v=FyZFK4LBjj0">Видео</a>*</p>
+    </main>
+
+    <footer th:insert="blocks/footer.html :: footer" class="fig"></footer>
+</body>
+</html>

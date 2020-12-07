@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Инструкция по установке Spring Boot</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        p {
+            font-size: 14pt;
+            text-indent: 20px;
+        }
+        .fig {
+            text-align: center; /* Выравнивание по центру */
+        }
+    </style>
+</head>
+<body>
+
+    <header th:insert="blocks/header.html :: header"></header>
+
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">Инструкция по установке Spring Boot</h1>
+        <p>1. Переходим на <a href="https://start.spring.io">сайт</a>, который сформирует начальный проект:</p>
+        <p class="fig">
+            <img src="/images/tutor1.png">
+        </p>
+        <p>2. Выбираем тип создаваемого проекта на ваш вкус: Maven или Gradle (советую выбирать Maven)</p>
+        <p>3. Выбираем язык программирования, при помощи которого будет производиться работа с
+            сайтом (в нашем случае Java)</p>
+        <p>4. Выбираем версию Spring Boot. Можно выбрать любую версию (лучше самую последнюю), главное не SNAPSHOT</p>
+        <p>5.1. Вводим имя группы (Group) в следующем формате: com.*name*: название группы не иметт значения</p>
+        <p>5.2. Вводим желаемое название проекта (Artifact)</p>
+        <p>5.3. Все остальные поля должны заполниться автоматически, их можно не трогать</p>
+        <p>6. Выбираем расширение создаваемого пакета (Packaging). Поскольку мы работаем с Java, выбираем расширение Jar</p>
+        <p>7. Выбираем версию Java (Java). Для этого вспомните, какую версию JDK вы ставили на компьютер, и выберите нужную</p>
+        <p>8. Нажимаем кнопку Generate, распаковываем полученный проект в нужное место и открываем его в предпочитаемой IDE</p>
+        <p>9. По итогу, развернутый проект должен выглядеть примерно так:</p>
+        <p class="fig">
+            <img src="/images/tutor2.PNG">
+        </p>
+        <p>10. Теперь развернем сервер - для этого перейдите на сайт со следующим <a href="https://spring.io/guides/gs/serving-web-content/">Гайдом</a></p>
+        <p>11. Следуем этому гайду и установка и развертывание Spring Boot сервера завершены</p>
+        <p>*Для большей информации посмотрите следующее <a href="https://www.youtube.com/watch?v=FyZFK4LBjj0">Видео</a>*</p>
+        <p></p>
+    </main>
+
+
+    <footer th:insert="blocks/footer.html :: footer" class="fig"></footer>
+
+</body>
+</html>

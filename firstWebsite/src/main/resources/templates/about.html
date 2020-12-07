@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Главная страница</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        p {
+            text-indent: 20px; /* Отступ первой строки в пикселах */
+        }
+        .fig {
+            text-align: center; /* Выравнивание по центру */
+        }
+    </style>
+</head>
+<body>
+<header th:insert="blocks/header.html :: header"></header>
+
+<main role="main" class="inner cover">
+    <h1 class="cover-heading">Кратко о Spring Boot</h1>
+    <p class="fig">
+        <img src="https://alexkosarev.name/wp-content/uploads/2019/01/spring_boot_logo.png" alt="Spring Boot Logo" width="256" height="256">
+    </p>
+    <p>Spring Boot -  универсальный фреймворк с открытым исходным кодом для Java-платформы. Также существует форк для
+        платформы .NET Framework, названный Spring.NET.</p>
+    <p>Первая версия была написана Родом Джонсоном, который впервые опубликовал её вместе с изданием своей книги
+        «Expert One-on-One Java EE Design and Development» (Wrox Press, октябрь 2002 года).</p>
+    <p>Фреймворк был впервые выпущен под лицензией Apache 2.0 license в июне 2003 года. Первая стабильная версия
+        1.0 была выпущена в марте 2004. Spring 2.0 был выпущен в октябре 2006, Spring 2.5 — в ноябре 2007,
+        Spring 3.0 в декабре 2009, и Spring 3.1 в декабре 2011. Текущая версия — 5.2.x.</p>
+    <p>Несмотря на то, что Spring не обеспечивал какую-либо конкретную модель программирования, он стал широко
+        распространённым в Java-сообществе главным образом как альтернатива и замена модели Enterprise JavaBeans.
+        Spring предоставляет бо́льшую свободу Java-разработчикам в проектировании; кроме того, он предоставляет хорошо
+        документированные и лёгкие в использовании средства решения проблем, возникающих при создании приложений
+        корпоративного масштаба.</p>
+    <p>Между тем, особенности ядра Spring применимы в любом Java-приложении, и существует множество расширений и
+        усовершенствований для построения веб-приложений на Java Enterprise платформе. По этим причинам Spring
+        приобрёл большую популярность и признаётся разработчиками как стратегически важный фреймворк.</p>
+</main>
+
+<footer th:insert="blocks/footer.html :: footer" class="fig"></footer>
+</body>
+</html>
